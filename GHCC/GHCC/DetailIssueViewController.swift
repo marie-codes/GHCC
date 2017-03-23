@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  DetailIssueViewController.swift
 //  GHCC
 //
 //  Created by Marie Park on 3/22/17.
@@ -8,18 +8,13 @@
 
 import UIKit
 
-class MasterViewController: UIViewController {
+class DetailIssueViewController: UIViewController {
 
+    var issueString: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-
-
-    
-    
-    
     
 }
-
