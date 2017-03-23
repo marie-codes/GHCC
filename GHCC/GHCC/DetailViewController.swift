@@ -26,14 +26,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueIssuesTableView" {
-            print(1)
-            if let dest = segue.destination as? IssuesTableViewController,
-                let arrayIndex = collectionView.indexPathsForSelectedItems {
-                print(2)
-                dest.numbersText = String(arrayIndex[0].item)
-            }
-        }
+        self.performSegue(withIdentifier: "segueIssuesTableView", sender: self)
     }
     
     // MARK: - Collection View DataSource
@@ -50,6 +43,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.layer.cornerRadius = 8
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "segueIssuesTableView", sender: self)
     }
 }
 

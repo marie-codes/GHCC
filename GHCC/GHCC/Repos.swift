@@ -13,14 +13,14 @@ struct Repo {
     var repoID: Int
     var name: String
     var description: UITextView
-    var language: String
+    var commits: Int
     var rating: Int
     
-    init(repoID: Int, name: String, description: UITextView, language: String, rating: Int) {
+    init(repoID: Int, name: String, description: UITextView, commits: Int, rating: Int) {
         self.repoID = repoID
         self.name = name
         self.description = description
-        self.language = language
+        self.commits = commits
         self.rating = rating
     }
 }
